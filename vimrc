@@ -13,13 +13,10 @@ set guifont=Menlo\ Regular:h13
 set tags=~/.vim/tags/cartacode
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-        \ 'file': '\v\.(exe|so|dll)$',
-        \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-        \ }
+
 
 autocmd! bufwritepost .vimrc source %
+
 " copy and paste
 set clipboard=unnamed
 
@@ -42,6 +39,11 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
+
+" Fugitive 
+"
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gb :Gblame<CR>
 
 
 vnoremap < <gv
