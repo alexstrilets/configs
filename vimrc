@@ -17,7 +17,7 @@ autocmd! bufwritepost .vimrc source %
 set clipboard=unnamed
 
 " mouse 
-set mouse=a
+"set mouse=a
 
 execute pathogen#infect()
 filetype plugin indent on

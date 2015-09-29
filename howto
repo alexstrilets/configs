@@ -1,0 +1,6 @@
+squash image
+
+$ docker save <image id> > image.tar
+$ sudo docker-squash -i image.tar -o squashed.tar -t newtag
+$ cat squashed.tar | docker load
+$ docker images <new image id>
