@@ -8,5 +8,5 @@ mv .aliases .aliases.save
 ln -s ./configs/bash_profile .bash_profile
 ln -s ./configs/bashrc .bashrc
 ln -s ./configs/vimrc .vimrc
-ln -s ./configs/vim ./vim
+ln -s ./configs/vim ./.vim
 ln -s ./configs/aliases .aliases

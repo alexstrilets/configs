@@ -11,13 +11,24 @@ set smartcase
 " source ~/.vim/plugins/cscope_maps.vim
 set guifont=Menlo\ Regular:h13
 set tags=~/.vim/tags/cartacode
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+        \ 'file': '\v\.(exe|so|dll)$',
+        \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+        \ }
 
 autocmd! bufwritepost .vimrc source %
 " copy and paste
 set clipboard=unnamed
 
 " mouse 
-"set mouse=a
+set mouse=a
+
+" CtrlP 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 execute pathogen#infect()
 filetype plugin indent on
