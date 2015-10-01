@@ -1,7 +1,7 @@
 set -o vi
 #export PS1="\e[0;34m\e[47m\u@\h \w> \e[m"
-#export PS1="\e[1;34m\h \w> \e[m"
-export PS1="\e\[\033[1;31m\h \w> \e[m"
+export PS1="\e[1;35m\h \w> \e[m"
+#export PS1="\e\[\033[1;31m\h \w> \e[m"
 
  #alias definitions.
 if [ -f ~/.aliases ]; then

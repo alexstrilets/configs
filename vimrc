@@ -11,7 +11,7 @@ set smartcase
 
 " folding
 set foldmethod=indent
-set foldlevel=2
+set foldlevel=1
 set foldclose=all
 
 " source ~/.vim/plugins/cscope_maps.vim
@@ -85,7 +85,14 @@ nnoremap <c-l> <c-w>l
 
 map <C-t> :NERDTreeToggle<CR>
 
+" color schme
 if has('gui_running')
         colorscheme solarized
         set background=light
 endif
+
+" Syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
