@@ -33,7 +33,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set clipboard=unnamed
 
 " mouse
-"
+set mouse=a
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
@@ -43,30 +43,33 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-set mouse=a
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" pathogen package manager
 execute pathogen#infect()
 filetype plugin indent on
 
+"set line numbering
 set relativenumber
-function! NumberToggle()
+function! Nt()
   if(&relativenumber == 1)
     set number
   else
-    set relativenumber
+    if (&number == 1)
+      set nonumber
+    else
+      set relativenumber
+    endif
   endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <c-b> :call Nt()<cr>
 
 " Fugitive
-"
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gb :Gblame<CR>
-
 
 vnoremap < <gv
 vnoremap > >gv
@@ -96,3 +99,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+" Do platform specific stuff
+ if has("unix")
+   let s:uname = system("uname -s")
+     if s:uname == "Darwin"
+         " Do Mac stuff here
+     else
+        " Do Linux stuff here
+     endif
+ endif

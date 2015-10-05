@@ -8,6 +8,7 @@ if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
+export CPATH=/usr/include
 export PATH=$PATH:$HOME/bin:/usr/local/Qt5.3.2/5.3/clang_64/bin
 export CSCOPE_DB=$HOME/src/CARTA/cscope.out
 export CARTAROOT=~/src/CARTA
@@ -17,5 +18,5 @@ export CY1=ubuntu@199.116.235.164
 export CY2=ubuntu@199.116.235.163
 export CY3=ubuntu@199.116.235.162
 #. ~/.boot2docker.env
-export RS=astrilet@142.244.190.107:/Users/astrilet/Alex-Shared
+export MS=astrilet@142.244.190.107:/Users/astrilet/Alex-Shared
 

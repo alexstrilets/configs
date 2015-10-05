@@ -1,6 +1,12 @@
-squash image
-
+-- squash image
 $ docker save <image id> > image.tar
 $ sudo docker-squash -i image.tar -o squashed.tar -t newtag
 $ cat squashed.tar | docker load
 $ docker images <new image id>
+
+-- git pull code for pull ID
+git fetch origin pull/ID/head:BRANCHNAME
+
+-- redirect port on running docker image
+docker inspect
+sudo iptables -t nat -A  DOCKER -p tcp --dport 8080 -j DNAT --to-destination 172.17.0.13:8080
