@@ -10,3 +10,9 @@ git fetch origin pull/ID/head:BRANCHNAME
 -- redirect port on running docker image
 docker inspect
 sudo iptables -t nat -A  DOCKER -p tcp --dport 8080 -j DNAT --to-destination 172.17.0.13:8080
+
+-- display vim keys mapping
+:map <-- shows all mapsing
+:nmap <-- mapping in normal mode
+:imap <-- insert mode
+:vmap <-- visual mode

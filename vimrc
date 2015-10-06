@@ -1,9 +1,11 @@
-let python_highlight_all=1
 syntax on
+let python_highlight_all=1
 
 "tabs search
 set ts=4
 set expandtab
+set shiftwidth=4
+set softtabstop=4
 set hlsearch
 set incsearch
 set ignorecase
@@ -11,7 +13,7 @@ set smartcase
 
 " folding
 set foldmethod=indent
-set foldlevel=1
+set foldlevel=2
 set foldclose=all
 
 " source ~/.vim/plugins/cscope_maps.vim
@@ -54,15 +56,14 @@ filetype plugin indent on
 
 "set line numbering
 set relativenumber
+set number
 function! Nt()
   if(&relativenumber == 1)
-    set number
+    set norelativenumber
+    set nonumber
   else
-    if (&number == 1)
-      set nonumber
-    else
-      set relativenumber
-    endif
+    set relativenumber
+    set number
   endif
 endfunc
 nnoremap <c-b> :call Nt()<cr>
@@ -93,6 +94,11 @@ if has('gui_running')
         colorscheme solarized
         set background=light
 endif
+function! Bb()
+    colorscheme solarized
+    set background=dark
+endfunc
+nnoremap <c-d> :call Bb()<cr>
 
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
