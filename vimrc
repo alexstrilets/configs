@@ -16,6 +16,8 @@ set foldmethod=indent
 set foldlevel=2
 set foldclose=all
 
+"save current buffers
+:exec 'set viminfo=%,' . &viminfo
 
 " source ~/.vim/plugins/cscope_maps.vim
 set guifont=Menlo\ Regular:h13
@@ -157,7 +159,7 @@ nmap <space>h :bprevious<CR>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
-nmap <space>bq :bp <BAR> bd #<CR>
+nmap <space>q :bp <BAR> bd #<CR>
 
 "Buffers opene the right side of the screen
 let g:buffergator_viewport_split_policy = 'R'
