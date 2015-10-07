@@ -57,19 +57,23 @@ let g:ctrlp_cmd = 'CtrlP'
 execute pathogen#infect()
 filetype plugin indent on
 
+
+set noai
 "set line numbering
+"
 set relativenumber
 set number
 function! Nt()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set nonumber
-  else
-    set relativenumber
-    set number
-  endif
+    if(&relativenumber == 1)
+        set norelativenumber
+        set nonumber
+    else
+       set relativenumber
+       set number
+    endif
 endfunc
 nnoremap <c-b> :call Nt()<cr>
+
 
 " Fugitive
 nnoremap <space>gs :Gstatus<CR>
@@ -86,6 +90,7 @@ set fo-=t
 set laststatus=2
 "let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -114,10 +119,10 @@ nnoremap <c-l> <c-w>l
 map <C-t> :NERDTreeToggle<CR>
 
 " color schme
-if has('gui_running')
-        colorscheme solarized
-        set background=light
-endif
+"if has('gui_running')
+"        colorscheme solarized
+"        set background=light
+"endif
 function! Bb()
     colorscheme solarized
     set background=dark
@@ -141,6 +146,9 @@ let g:syntastic_check_on_wq = 0
      endif
  endif
 
+" window splitting
+nmap <space>s :sp<CR>
+nmap <space>v :vsplit<CR>
 
 "buffer setup
 " This allows buffers to be hidden if you've modified a buffer.
@@ -166,3 +174,10 @@ let g:buffergator_viewport_split_policy = 'R'
 
 " Looper buffers
 let g:buffergator_mru_cycle_loop = 1
+
+
+" Tag bar
+nmap <F8> :TagbarToggle<CR>
+
+
+
