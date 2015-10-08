@@ -16,3 +16,9 @@ sudo iptables -t nat -A  DOCKER -p tcp --dport 8080 -j DNAT --to-destination 172
 :nmap <-- mapping in normal mode
 :imap <-- insert mode
 :vmap <-- visual mode
+
+-- pull submodules in git
+-- look at .gitsubmodule file
+git clone --recursive git://github.com/foo/bar.git
+or after to update
+git submodule update --init --recursive
