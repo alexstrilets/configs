@@ -18,6 +18,10 @@ if [ -d .vim -a ! -L .vim ]; then
   mv .vim .vim.save
 fi
 
+if [ -d .tmux.conf -a ! -L .tmux.conf ]; then
+  mv .tmux.conf .tmux.conf.save
+fi
+
 if [ -f .aliases -a ! -L .aliases ]; then
   mv .aliases .aliases.save
 fi
@@ -27,3 +31,4 @@ ln -s ./configs/bashrc .bashrc
 ln -s ./configs/vimrc .vimrc
 ln -s ./configs/vim ./.vim
 ln -s ./configs/aliases .aliases
+ln -s ./configs/tmux.conf .tmux.conf
