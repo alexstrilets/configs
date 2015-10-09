@@ -35,6 +35,11 @@ if [ ! -f .aliases ]; then
   ln -s ./configs/aliases .aliases
 fi
 
+# git-prompt.sh
+if [ ! -f .git-prompt.sh]; then
+  ln -s ./configs/git-prompt.sh .git-prompt.sh
+fi
+
 # link .tmux.conf
 if [ -f .tmux.conf -a ! -L .tmux.conf ]; then
   mv .tmux.conf .tmux.conf.save

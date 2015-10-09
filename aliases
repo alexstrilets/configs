@@ -12,8 +12,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# git aliases
 alias gs='git status -bs'
 alias gc='git checkout'
+alias gh='git hist'
 
 alias howto='cat ~/configs/howto | less'
 

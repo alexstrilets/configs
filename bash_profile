@@ -1,12 +1,19 @@
 set -o vi
-#export PS1="\e[0;34m\e[47m\u@\h \w> \e[m"
-export PS1="\e[1;35m\h \w> \e[m"
-#export PS1="\e\[\033[1;31m\h \w> \e[m"
 
  #alias definitions.
 if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
+
+if [ -f ~/.git-prompt.sh]; then
+    source ~/.git-prompt.sh
+    export PS1='\n\[\e[1;37m\]|-- \[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]\w\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\] \[\e[1;37m\]--|\[\e[0;39m\]\n>'
+else
+    #export PS1="\e[0;34m\e[47m\u@\h \w> \e[m"
+    export PS1="\e[1;35m\h \w> \e[m"
+    #export PS1="\e\[\033[1;31m\h \w> \e[m"
+fi
+
 
 export CPATH=/usr/include
 export PATH=$PATH:$HOME/bin:/usr/local/Qt5.3.2/5.3/clang_64/bin
