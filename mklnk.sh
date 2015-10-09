@@ -36,7 +36,7 @@ if [ ! -f .aliases ]; then
 fi
 
 # git-prompt.sh
-if [ ! -f .git-prompt.sh]; then
+if [ ! -f .git-prompt.sh ]; then
   ln -s ./configs/git-prompt.sh .git-prompt.sh
 fi
 
