@@ -16,6 +16,7 @@ else
 fi
 
 
+export CSCOPE_DB=/Users/astrilet/src/CARTA/cscope.out
 export CPATH=/usr/include
 export PATH=$PATH:$HOME/bin:/usr/local/Qt5.3.2/5.3/clang_64/bin
 export CSCOPE_DB=$HOME/src/CARTA/cscope.out

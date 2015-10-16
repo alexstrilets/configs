@@ -1,1 +1,3 @@
-export CSCOPE_DB=/Users/astrilet/src/CARTA/cscope.out
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
