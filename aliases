@@ -17,6 +17,10 @@ alias gs='git status -bs'
 alias gc='git checkout'
 alias gh='git hist'
 
+# tmux commands
+alias tls='tmux list-sessions'
+alias tkill='tmux kill-session'
+
 alias howto='cat ~/configs/howto | less'
 
 #this should only be available on Mac
