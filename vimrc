@@ -83,7 +83,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 set colorcolumn=120
-set nowrap
+set wrap
 set fo-=t
 
 " powerline - air-line
