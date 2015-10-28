@@ -34,9 +34,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd! bufwritepost .vimrc source %
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" copy and paste
-set clipboard=unnamed
-
 " mouse
 set mouse=a
 
@@ -56,6 +53,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " pathogen package manager
 execute pathogen#infect()
 filetype plugin indent on
+filetype plugin on
 
 
 set noai
