@@ -19,7 +19,8 @@ alias gh='git hist'
 
 # tmux commands
 alias tls='tmux list-sessions'
-alias tkill='tmux kill-session'
+alias tkill='tmux kill-session -t'
+alias tnew='tmux new-session -s'
 
 alias howto='cat ~/configs/howto | less'
 

@@ -8,6 +8,7 @@ fi
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
     #export PS1='\n\[\e[1;37m\]|-- \[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]\w\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\] \[\e[1;37m\]--|\[\e[0;39m\]\n>'
+    export GIT_PS1_SHOWDIRTYSTATE=1
     export PS1='\[\e[1;32m\]\h\[\e[0;39m\]:\[\e[1;36m\]\w\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 "(%s)")\[\e[0;39m\]\[\e[0;39m\]$'
 else
     #export PS1="\e[0;34m\e[47m\u@\h \w> \e[m"
