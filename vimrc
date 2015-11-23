@@ -16,6 +16,9 @@ set foldmethod=indent
 set foldlevel=2
 set foldclose=all
 
+" show endof line character
+set lcs=eol:$,tab:\ \
+:
 "save current buffers
 :exec 'set viminfo=%,' . &viminfo
 
