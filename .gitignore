@@ -5,3 +5,6 @@ tmux/tmux-plugins/tmux-resurrect
 
 #vi backup file
 *.swp
+
+#log files
+*.log
