@@ -1,0 +1,7 @@
+tmux/tmux-plugins/tmux-resurrect
+
+#python pre-compiled code
+*.pyc
+
+#vi backup file
+*.swp
