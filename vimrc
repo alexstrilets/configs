@@ -13,7 +13,7 @@ set smartcase
 
 " folding
 set foldmethod=indent
-set foldlevel=2
+set foldlevel=5
 set foldclose=all
 
 " show endof line character
@@ -133,8 +133,9 @@ nnoremap <c-d> :call Bb()<cr>
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_mode_map = { 'passive_filetypes': ['rst'] }
 
 
 " Do platform specific stuff

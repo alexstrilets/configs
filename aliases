@@ -34,4 +34,5 @@ alias mcartad='qmake NOSERVER=1 CARTA_BUILD_TYPE=bughunter ~/src/CARTA/CARTAvis/
 alias runv='./desktop --html $CARTAROOT/CARTAvis/carta/VFS/DesktopDevel/desktop/desktopIndex.html --scriptPort 9999 ~/CARTA/Images/555wmos.fits'
 alias dm='valgrind --tool=memcheck --leak-check=full --show-reachable=yes --track-origins=yes'
 alias cleandc='docker rm $(docker ps -a -q | grep -v "$(echo "one" && docker ps  -q)")'
+alias mvcarta='mv ../../../CartaTemplate/* .'
 

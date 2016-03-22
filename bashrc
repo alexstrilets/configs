@@ -28,4 +28,4 @@ export CY1=ubuntu@199.116.235.164
 export CY2=ubuntu@199.116.235.163
 export CY3=ubuntu@199.116.235.162
 #. ~/.boot2docker.env
-export MS=astrilet@142.244.190.107:/Users/astrilet/Alex-Shared
+export MS=astrilet@142.244.191.182:/Users/astrilet/Alex-Shared
