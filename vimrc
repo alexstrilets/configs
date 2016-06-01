@@ -120,10 +120,10 @@ nnoremap <c-l> <c-w>l
 map <C-t> :NERDTreeToggle<CR>
 
 " color schme
-"if has('gui_running')
-"        colorscheme solarized
-"        set background=light
-"endif
+if has('gui_running')
+        colorscheme solarized
+        set background=light
+endif
 function! Bb()
     colorscheme solarized
     set background=dark
