@@ -22,3 +22,19 @@ sudo iptables -t nat -A  DOCKER -p tcp --dport 8080 -j DNAT --to-destination 172
 git clone --recursive git://github.com/foo/bar.git
 or after to update
 git submodule update --init --recursive
+
+-- MYSQL new user
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+
+
+-- PHP debugin
+<?php var_dump(__FILE__, __LINE__, $_REQUEST); ?>
+<?php
+require 'FirePHPCore/fb.php';
+
+FB::log('Log message');
+FB::info('Info message');
+FB::warn('Warn message');
+FB::error('Error message'); ?>

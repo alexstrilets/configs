@@ -17,15 +17,19 @@ else
 fi
 
 
-export CSCOPE_DB=/Users/astrilet/src/CARTA/cscope.out
+#CARTA stuff
+#export PATH=$PATH:$HOME/bin:/usr/local/Qt5.3.2/5.3/clang_64/bin
+#export CARTAROOT=~/src/CARTA
+#export DYLD_LIBRARY_PATH=$HOME/src/CARTA/build/cpp/core:$HOME/src/CARTA/build/cpp/CartaLib:/usr/local/qwt-6.1.3-svn/lib:/opt/packages/casacore-2.0.1/lib/
+#export MS=astrilet@142.244.191.182:/Users/astrilet/Alex-Shared
+
 export CPATH=/usr/include
-export PATH=$PATH:$HOME/bin:/usr/local/Qt5.3.2/5.3/clang_64/bin
 export CSCOPE_DB=$HOME/src/CARTA/cscope.out
-export CARTAROOT=~/src/CARTA
-export DYLD_LIBRARY_PATH=$HOME/src/CARTA/build/cpp/core:$HOME/src/CARTA/build/cpp/CartaLib:/usr/local/qwt-6.1.3-svn/lib:/opt/packages/casacore-2.0.1/lib/
+
+#VM aliases
 export CS=142.244.191.161
 export CY1=ubuntu@199.116.235.164
 export CY2=ubuntu@199.116.235.163
 export CY3=ubuntu@199.116.235.162
+export LS1=astrilet@129.128.222.10
 #. ~/.boot2docker.env
-export MS=astrilet@142.244.191.182:/Users/astrilet/Alex-Shared
