@@ -38,3 +38,6 @@ FB::log('Log message');
 FB::info('Info message');
 FB::warn('Warn message');
 FB::error('Error message'); ?>
+
+-- ssh keygen
+ssh-keygen -t rsa -b 4096
