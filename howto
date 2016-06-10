@@ -38,3 +38,9 @@ FB::log('Log message');
 FB::info('Info message');
 FB::warn('Warn message');
 FB::error('Error message'); ?>
+
+-- ssh keygen
+ssh-keygen -t rsa -b 4096
+
+-- run discovery image in docker
+docker run -p 3000:3000 -it discovery ./sd.sh
