@@ -146,6 +146,11 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = { 'passive_filetypes': ['rst'] }
 
 
+"Quickrun
+let g:quickrun_config={'*': {'split': ''}}
+set splitbelow
+nmap <F5> :w<CR>:QuickRun<CR>
+
 " Do platform specific stuff
  if has("unix")
    let s:uname = system("uname -s")
@@ -191,4 +196,3 @@ let g:buffergator_mru_cycle_loop = 1
 " Tag bar
 nmap <F8> :TagbarToggle<CR>
 
-nmap <F5> :w<CR>:QuickRun<CR>
