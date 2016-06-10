@@ -73,7 +73,7 @@ function! Nt()
        set number
     endif
 endfunc
-nnoremap <c-b> :call Nt()<cr>
+nnoremap <c-z> :call Nt()<cr>
 
 
 " Fugitive
@@ -117,18 +117,26 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" NERD Tree stuff
 map <C-t> :NERDTreeToggle<CR>
+map <C-x> :NERDTreeTabsToggle<CR>
 
 " color schme
 if has('gui_running')
         colorscheme solarized
         set background=light
 endif
-function! Bb()
+function! Bd()
     colorscheme solarized
     set background=dark
 endfunc
-nnoremap <c-d> :call Bb()<cr>
+nnoremap <c-d> :call Bd()<cr>
+
+function! Bl()
+    colorscheme solarized
+    set background=light
+endfunc
+nnoremap <c-b> :call Bl()<cr>
 
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -157,6 +165,9 @@ nmap <space>v :vsplit<CR>
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 
+"Ack grep
+nmap <space>\ :Ack
+
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
 nmap <space>n :enew<cr>
@@ -177,6 +188,7 @@ let g:buffergator_viewport_split_policy = 'R'
 " Looper buffers
 let g:buffergator_mru_cycle_loop = 1
 
-
 " Tag bar
 nmap <F8> :TagbarToggle<CR>
+
+nmap <F5> :w<CR>:QuickRun<CR>
