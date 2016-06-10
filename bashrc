@@ -33,3 +33,8 @@ export CY2=ubuntu@199.116.235.163
 export CY3=ubuntu@199.116.235.162
 export LS1=astrilet@129.128.222.10
 #. ~/.boot2docker.env
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
