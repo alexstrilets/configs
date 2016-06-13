@@ -120,12 +120,16 @@ nnoremap <c-l> <c-w>l
 " NERD Tree stuff
 map <C-t> :NERDTreeToggle<CR>
 map <C-x> :NERDTreeTabsToggle<CR>
+map <C-i> :IndentGuidesToggle<CR>
 
 " color schme
+colorscheme solarized
 if has('gui_running')
-        colorscheme solarized
         set background=light
+else
+    set background=dark
 endif
+
 function! Bd()
     colorscheme solarized
     set background=dark
