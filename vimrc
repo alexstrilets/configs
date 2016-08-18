@@ -1,8 +1,12 @@
-syntax on
-let python_highlight_all=1
+set nocompatible      " We're running Vim, not Vi!
+
+" pathogen package manager
+execute pathogen#infect()
 
 "tabs search
-set ts=4
+syntax on             " Enable syntax highlighting
+"set ts=4
+set tabstop=2 shiftwidth=2 softtabstop=2
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -10,11 +14,18 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set autoindent
+
+
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on
+let python_highlight_all=1
 
 " folding
-set foldmethod=indent
-set foldlevel=5
-set foldclose=all
+"set foldmethod=indent
+"set foldlevel=5
+"set foldclose=all
 
 " show endof line character
 set lcs=eol:$,tab:\ \
@@ -53,10 +64,6 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" pathogen package manager
-execute pathogen#infect()
-filetype plugin indent on
-filetype plugin on
 
 
 set noai
@@ -118,8 +125,10 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " NERD Tree stuff
-map <C-t> :NERDTreeToggle<CR>
-map <C-x> :NERDTreeTabsToggle<CR>
+" map <C-t> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeTabsToggle<CR>
+
+" identation show/hide
 map <C-i> :IndentGuidesToggle<CR>
 
 " color schme
@@ -149,11 +158,20 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = { 'passive_filetypes': ['rst'] }
 
+"Ruby
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:ruby_indent_block_style = 'do'
+
+imap <S-CR>    <CR><CR>end<Esc>-cc
+imap <TAB> <c-x><c-o>
+
 
 "Quickrun
 let g:quickrun_config={'*': {'split': ''}}
 set splitbelow
-nmap <F5> :w<CR>:QuickRun<CR>
+nmap <F9> :w<CR>:QuickRun<CR>
 
 " Do platform specific stuff
  if has("unix")

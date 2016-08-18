@@ -34,5 +34,5 @@ alias howto='cat ~/configs/howto | less'
 #alias runv='./desktop --html $CARTAROOT/CARTAvis/carta/VFS/DesktopDevel/desktop/desktopIndex.html --scriptPort 9999 ~/CARTA/Images/555wmos.fits'
 alias dm='valgrind --tool=memcheck --leak-check=full --show-reachable=yes --track-origins=yes'
 alias cleandc='docker rm $(docker ps -a -q | grep -v "$(echo "one" && docker ps  -q)")'
-
-
+alias sql='mysql --host=erms-dev.library.ualberta.ca --port=3306 --user=root --password=man0war coral_licensing_prod'
+alias sphp='rsync -a ~/src/coralapi/php/ astrilet@129.128.222.10:~/src/coralapi/'

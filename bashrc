@@ -33,6 +33,12 @@ export CY3=ubuntu@199.116.235.162
 export LS1=astrilet@129.128.222.10
 #. ~/.boot2docker.env
 
+#mysql
+if [ -d "/Applications/MySQLWorkbench.app/Contents/MacOS" ]; then
+  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+fi
+
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
