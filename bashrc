@@ -28,7 +28,7 @@ export CSCOPE_DB=$HOME/src/CARTA/cscope.out
 #VM aliases
 export CS=142.244.191.161
 export CY1=ubuntu@199.116.235.164
-export CY2=ubuntu@199.116.235.163
+export CY2=centos@199.116.235.163
 export CY3=ubuntu@199.116.235.162
 export LS1=astrilet@129.128.222.10
 #. ~/.boot2docker.env
