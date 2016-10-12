@@ -34,8 +34,7 @@ set lcs=eol:$,tab:\ \
 :exec 'set viminfo=%,' . &viminfo
 
 " source ~/.vim/plugins/cscope_maps.vim
-set guifont=Menlo\ Regular:h13
-set tags=~/.vim/tags/cartacode
+" set tags=~/.vim/tags/cartacode
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
@@ -118,11 +117,17 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-
+"--- Split Management ----
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" window splitting
+nmap <space>s :sp<CR>
+nmap <space>v :vsplit<CR>
+set splitbelow
+set splitright
 
 " NERD Tree stuff
 " map <C-t> :NERDTreeToggle<CR>
@@ -131,13 +136,24 @@ map <C-t> :NERDTreeTabsToggle<CR>
 " identation show/hide
 map <C-i> :IndentGuidesToggle<CR>
 
+"-------- Visuals --------
+colorscheme atom-dark
+
+set guifont=Menlo\ Regular:h13
+set t_CO=256
+
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
 " color schme
-colorscheme solarized
-if has('gui_running')
-        set background=light
-else
-    set background=dark
-endif
+" colorscheme solarized
+" if has('gui_running')
+"         set background=light
+" else
+"     set background=dark
+" endif
 
 function! Bd()
     colorscheme solarized
@@ -183,9 +199,6 @@ nmap <F9> :w<CR>:QuickRun<CR>
      endif
  endif
 
-" window splitting
-nmap <space>s :sp<CR>
-nmap <space>v :vsplit<CR>
 
 "buffer setup
 " This allows buffers to be hidden if you've modified a buffer.
