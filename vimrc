@@ -13,14 +13,16 @@ set softtabstop=4
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase
 set autoindent
+set shell=/bin/bash
 
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on
 let python_highlight_all=1
+
+nnoremap <F3> :set hlsearch!<CR>
 
 " folding
 "set foldmethod=indent
@@ -56,13 +58,13 @@ highlight BadWhitespace ctermbg=red guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhi"tespace /\s\+$/
 
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
+nmap <c-R> :CtrlPBufTag<cr>
 
 
 set noai
@@ -136,36 +138,6 @@ map <C-t> :NERDTreeTabsToggle<CR>
 " identation show/hide
 map <C-i> :IndentGuidesToggle<CR>
 
-"-------- Visuals --------
-colorscheme atom-dark
-
-set guifont=Menlo\ Regular:h13
-set t_CO=256
-
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-
-" color schme
-" colorscheme solarized
-" if has('gui_running')
-"         set background=light
-" else
-"     set background=dark
-" endif
-
-function! Bd()
-    colorscheme solarized
-    set background=dark
-endfunc
-nnoremap <c-d> :call Bd()<cr>
-
-function! Bl()
-    colorscheme solarized
-    set background=light
-endfunc
-nnoremap <c-b> :call Bl()<cr>
 
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -208,6 +180,24 @@ set hidden
 "Ack grep
 nmap <space>\ :Ack
 
+" Search setup
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g "'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
 nmap <space>n :enew<cr>
@@ -231,3 +221,14 @@ let g:buffergator_mru_cycle_loop = 1
 " Tag bar
 nmap <F8> :TagbarToggle<CR>
 
+"-------- Visuals --------
+colorscheme atom-dark
+
+set guifont=Menlo\ Regular:h13
+set t_CO=256
+
+set guioptions-=e
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
