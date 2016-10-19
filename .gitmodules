@@ -49,3 +49,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git clone https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
+	url = git clone https://github.com/msanders/snipmate.vim.git
