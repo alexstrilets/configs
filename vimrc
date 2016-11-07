@@ -25,9 +25,9 @@ let python_highlight_all=1
 nnoremap <F3> :set hlsearch!<CR>
 
 " folding
-"set foldmethod=indent
-"set foldlevel=5
-"set foldclose=all
+set foldmethod=indent
+set foldlevel=2
+set foldclose=all
 
 " show endof line character
 set lcs=eol:$,tab:\ \
@@ -39,9 +39,10 @@ set lcs=eol:$,tab:\ \
 " set tags=~/.vim/tags/cartacode
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+nmap <space>f :tag<space>
 
 " no beeps
-set vb
+set noerrorbells vb t_vb=
 
 " always trim trailing whitespace .. is there ever a good reason?
 " and some other autocommands
@@ -235,3 +236,17 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
+
+nmap <Leader>ev :e $MYVIMRC<cr>
+nmap <Leader>es :ex ~/.vim/bundle/snipmate.vim/snippets<cr>
+
+
+
+" Tips and tricks
+" zz -center current line
+" di( - delete inside ( (can be ", {
+" <space>f - :tag  (Find)
+" K - keyword search
+" Ctrl ] to go defintion Ctrl ^ - back
+" zo -opne folding zR - make all folding go away
+" leader map to \ by default
