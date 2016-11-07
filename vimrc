@@ -65,9 +65,10 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhi"tespace /\s\+$/
 let g:ctrlp_match_window="top, order:ttb,min:1,max:30,results:30"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-nmap <D-p> :CtrlP<cr>
-nmap <c-R> :CtrlPBufTag<cr>
+nmap <c-s> :CtrlPBufTag<cr>
+nmap <D-s> :CtrlPBufTag<cr>
 nmap <c-F> :CtrlPMRUFiles<cr>
+nmap <D-F> :CtrlPMRUFiles<cr>
 
 set noai
 "set line numbering
