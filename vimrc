@@ -4,7 +4,6 @@ set nocompatible      " We're running Vim, not Vi!
 execute pathogen#infect()
 
 "tabs search
-syntax on             " Enable syntax highlighting
 "set ts=4
 set tabstop=2 shiftwidth=2 softtabstop=2
 set expandtab
@@ -20,6 +19,7 @@ set shell=/bin/bash
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on
+syntax on             " Enable syntax highlighting
 let python_highlight_all=1
 
 nnoremap <F3> :set hlsearch!<CR>
@@ -226,7 +226,7 @@ let g:buffergator_mru_cycle_loop = 1
 nmap <F8> :TagbarToggle<CR>
 
 "-------- Visuals --------
-colorscheme atom-dark
+colorscheme peachpuff
 
 set guifont=Menlo\ Regular:h13
 set t_CO=256
