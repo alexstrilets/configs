@@ -51,7 +51,7 @@ autocmd! bufwritepost .vimrc source %
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " mouse
-set mouse=a
+set mouse=r
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
