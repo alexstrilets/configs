@@ -24,6 +24,9 @@ or after to update
 git submodule update --init --recursive
 
 -- MYSQL new user
+CREATE DATABASE wp_myblog;
+GRANT ALL PRIVILEGES ON db1.* TO 'user1'@'localhost' IDENTIFIED BY 'your_password_here';
+
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
 FLUSH PRIVILEGES;
@@ -44,3 +47,15 @@ ssh-keygen -t rsa -b 4096
 
 -- run discovery image in docker
 docker run -p 3000:3000 -it discovery ./sd.sh
+
+-- bagelbone graphical package manager
+ssh -X root@192.168.7.2 "/usr/sbin/synaptic"
+
+-- ubuntu list all installed packages
+dpkg -l
+service --status-all
+systemctl enable SERVICE
+apt-get remove --purge mysql
+
+sudo apachectl stop/restart/stop
+
