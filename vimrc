@@ -22,12 +22,14 @@ filetype plugin on
 syntax on             " Enable syntax highlighting
 let python_highlight_all=1
 
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F1> :set hlsearch!<CR>
 
 " folding
-set foldmethod=indent
-set foldlevel=2
-set foldclose=all
+set foldmethod=manual
+inoremap <F10> <C-O>za
+nnoremap <F10> za
+onoremap <F10> <C-C>za
+vnoremap <F10> zf
 
 " show endof line character
 set lcs=eol:$,tab:\ \
@@ -59,7 +61,7 @@ highlight BadWhitespace ctermbg=red guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhi"tespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " CtrlP

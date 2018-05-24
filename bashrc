@@ -35,15 +35,7 @@ fi
 #export MS=astrilet@142.244.191.182:/Users/astrilet/Alex-Shared
 
 export CPATH=/usr/include
-export CSCOPE_DB=$HOME/src/CARTA/cscope.out
-
-#VM aliases
-export CS=142.244.191.161
-export CY1=ubuntu@199.116.235.164
-export CY2=centos@199.116.235.163
-export CY3=ubuntu@199.116.235.162
-export LS1=astrilet@129.128.222.10
-#. ~/.boot2docker.env
+export CSCOPE_DB=$HOME/src/cscope.out
 
 #mysql
 if [ -d "/Applications/MySQLWorkbench.app/Contents/MacOS" ]; then
@@ -51,9 +43,3 @@ if [ -d "/Applications/MySQLWorkbench.app/Contents/MacOS" ]; then
 fi
 
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
