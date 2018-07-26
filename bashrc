@@ -33,8 +33,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#VM aliases
-export PATH=$HOME/.composer/vendor/bin:$HOME/Library/Python/2.7/bin:/usr/local/sbin:$HOME/bin:$PATH
+export CPATH=/usr/include
+export CSCOPE_DB=$HOME/src/cscope.out
 
 #mysql
 if [ -d "/Applications/MySQLWorkbench.app/Contents/MacOS" ]; then
@@ -51,4 +51,3 @@ export PATH=$PATH:$HOME/devel/flutter/bin
 #Android Studio
 export ANDROID_HOME='/Users/astrilet/Library/Android/sdk'
 export JAVA_HOME='/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home'
-

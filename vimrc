@@ -22,12 +22,14 @@ filetype plugin on
 syntax on             " Enable syntax highlighting
 let python_highlight_all=1
 
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F1> :set hlsearch!<CR>
 
 " folding
-set foldmethod=indent
-set foldlevel=2
-set foldclose=all
+set foldmethod=manual
+inoremap <F10> <C-O>za
+nnoremap <F10> za
+onoremap <F10> <C-C>za
+vnoremap <F10> zf
 
 " show endof line character
 set lcs=eol:$,tab:\ \
