@@ -40,6 +40,11 @@ if [ ! -f .git-prompt.sh ]; then
   ln -s ./configs/git-prompt.sh .git-prompt.sh
 fi
 
+# git-hist.sh
+if [ ! -f .git-hist.sh ]; then
+  ln -s ./configs/git-hist.sh .git-hist.sh
+fi
+
 # link .tmux.conf
 if [ -f .tmux.conf -a ! -L .tmux.conf ]; then
   mv .tmux.conf .tmux.conf.save

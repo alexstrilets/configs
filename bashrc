@@ -5,6 +5,10 @@ if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
+if [ -f ~/.git-hist.sh ]; then
+    source ~/.git-hist.sh
+fi
+
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
     #export PS1='\n\[\e[1;37m\]|-- \[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]\w\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\] \[\e[1;37m\]--|\[\e[0;39m\]\n>'
@@ -29,17 +33,22 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#export PATH=$PATH:$HOME/bin:/usr/local/Qt5.3.2/5.3/clang_64/bin
-#export CARTAROOT=~/src/CARTA
-#export DYLD_LIBRARY_PATH=$HOME/src/CARTA/build/cpp/core:$HOME/src/CARTA/build/cpp/CartaLib:/usr/local/qwt-6.1.3-svn/lib:/opt/packages/casacore-2.0.1/lib/
-#export MS=astrilet@142.244.191.182:/Users/astrilet/Alex-Shared
-
-
 #VM aliases
-export PATH=/usr/local/sbin:$PATH
+export PATH=$HOME/.composer/vendor/bin:$HOME/Library/Python/2.7/bin:/usr/local/sbin:$HOME/bin:$PATH
 
 #mysql
 if [ -d "/Applications/MySQLWorkbench.app/Contents/MacOS" ]; then
   export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 fi
+
+function iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}
+
+#Flutter
+export PATH=$PATH:$HOME/devel/flutter/bin
+
+#Android Studio
+export ANDROID_HOME='/Users/astrilet/Library/Android/sdk'
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home'
 

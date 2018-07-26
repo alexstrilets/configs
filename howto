@@ -6,6 +6,13 @@ $ docker images <new image id>
 
 -- git pull code for pull ID
 git fetch origin pull/ID/head:BRANCHNAME
+-- store credentials
+git config credential.helper store
+-- pull submodules in git
+-- look at .gitsubmodule file
+git clone --recursive git://github.com/foo/bar.git
+or after to update
+git submodule update --init --recursive
 
 -- redirect port on running docker image
 docker inspect
@@ -17,12 +24,6 @@ sudo iptables -t nat -A  DOCKER -p tcp --dport 8080 -j DNAT --to-destination 172
 :imap <-- insert mode
 :vmap <-- visual mode
 
--- pull submodules in git
--- look at .gitsubmodule file
-git clone --recursive git://github.com/foo/bar.git
-or after to update
-git submodule update --init --recursive
-
 -- MYSQL new user
 CREATE DATABASE wp_myblog;
 GRANT ALL PRIVILEGES ON db1.* TO 'user1'@'localhost' IDENTIFIED BY 'your_password_here';
@@ -30,7 +31,6 @@ GRANT ALL PRIVILEGES ON db1.* TO 'user1'@'localhost' IDENTIFIED BY 'your_passwor
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
 FLUSH PRIVILEGES;
-
 
 -- PHP debugin
 <?php var_dump(__FILE__, __LINE__, $_REQUEST); ?>
@@ -58,4 +58,29 @@ systemctl enable SERVICE
 apt-get remove --purge mysql
 
 sudo apachectl stop/restart/stop
+
+# TZ
+sudo dpkg-reconfigure tzdata
+
+
+#REACT NATIVE
+
+Edit the file /android/gradle/wrapper/gradle-wrapper.properties and update the last line with:
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.3-rc-2-all.zip
+
+
+In Android Studio: File ->Project Structure -> Android SDK Location
+
+Copy Android SDK Path enter image description here
+
+In Your Project_Name -> Android -> Create a File local.properties
+Open local.properties.
+Write sdk.dir=/Users/Ashok/Library/Android/sdk
+Save it.
+from your project root directory react-native run-android.
+
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home'
+
+
+sudo /usr/libexec/locate.updatedb
 
