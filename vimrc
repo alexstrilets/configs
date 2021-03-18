@@ -1,5 +1,6 @@
 set nocompatible      " We're running Vim, not Vi!
 
+
 " pathogen package manager
 execute pathogen#infect()
 
@@ -14,7 +15,7 @@ set incsearch
 set ignorecase
 set autoindent
 set shell=/bin/bash
-
+set nofoldenable
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -24,12 +25,16 @@ let python_highlight_all=1
 
 nnoremap <F1> :set hlsearch!<CR>
 
-" folding
-set foldmethod=manual
-inoremap <F10> <C-O>za
-nnoremap <F10> za
-onoremap <F10> <C-C>za
-vnoremap <F10> zf
+if executable('pyls')
+        au User lsp_setup call lsp#register_server({
+                \ 'name': 'pyls',
+                \ 'cmd': {server_info->['pyls']},
+                \ 'whitelist': ['python'],
+                \ })
+endif
+
+" tabnine
+set rtp+=~/tabnine-vim
 
 " show endof line character
 set lcs=eol:$,tab:\ \
@@ -151,12 +156,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = { 'passive_filetypes': ['rst'] }
-
-"Ruby
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:ruby_indent_block_style = 'do'
 
 imap <S-CR>    <CR><CR>end<Esc>-cc
 imap <TAB> <c-x><c-o>
